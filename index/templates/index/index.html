@@ -21,25 +21,31 @@
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
                 <a class="navbar-brand" href={% url 'index' %}>Index</a>
-                <a class="navbar-brand" href={% url 'plantilla' %}>Plantilla</a>
+                {% comment %} <a class="navbar-brand" href={% url 'plantilla' %}>Plantilla</a> {% endcomment %}
+                <a class="navbar-brand" href={% url 'crear_cerrajero' %}>Crear Cerrajero</a>
+                <a class="navbar-brand" href={% url 'crear_futbolista' %}>Crear Futbolista</a>
+                <a class="navbar-brand" href={% url 'crear_ingeniero' %}>Crear Ingeniero</a>
+                <a class="navbar-brand" href={% url 'lista_cerrajeros' %}>Lista Cerrajeros</a>
             </div>
         </nav>
         <!-- Masthead-->
+        {%block 'header_block'%}
         <header class="masthead">
             <div class="container position-relative">
                 <div class="row justify-content-center">
                     <div class="col-xl-6">
                         <div class="text-center text-white">
                             <!-- Page heading-->
-                            {%block 'header_block'%}
-                                <h1 class="mb-5">Bienvenidos a nuestra pagina de inicio!</h1>
-                            {%endblock 'header_block'%}
+                            {% block header_text_block %}
+                            <h1 class="mb-5">Bienvenidos a nuestra pagina de inicio!</h1>
+                            <h1 class="mb-5">Primera Entrega CoderHouse</h1>
+                            {% endblock header_text_block %}o
                         </div>
                     </div>
                 </div>
             </div>
         </header>
-        
+        {%endblock 'header_block'%}
         {%block 'body_block'%}
 
         {% endblock 'body_block'%}
